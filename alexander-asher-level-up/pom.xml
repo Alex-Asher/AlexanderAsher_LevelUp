@@ -18,6 +18,44 @@
         <maven-checkstyle-plugin.version>3.2.0</maven-checkstyle-plugin.version>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>happy-ticket-negative-suite</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>${project.build.directory}/test-classes/ru/levelp/at/homework2/HappyTicketNegativeSuite.xml
+                </suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>happy-ticket-positive-suite</id>
+            <properties>
+                <suite.xml>${project.build.directory}/test-classes/ru/levelp/at/homework2/HappyTicketPositiveSuite.xml
+                </suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>mvn </id>
+            <properties>
+                <suite.xml>${project.build.directory}/test-classes/ru/levelp/at/homework2/HappyTicketFullSuite.xml
+                </suite.xml>
+            </properties>
+        </profile>
+    </profiles>
+
+
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.8.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -36,7 +74,6 @@
                         <!--  pay attention to use exact url for checkstyle plugin ruleset  -->
                         https://raw.githubusercontent.com/khda91/leveup-code-checkers-configurations/main/checkstyle/checkstyle.xml
                     </configLocation>
-                    <encoding>${project.build.sourceEncoding}</encoding>
                     <includeTestSourceDirectory>true</includeTestSourceDirectory>
                     <violationSeverity>warning</violationSeverity>
                     <consoleOutput>true</consoleOutput>
@@ -52,6 +89,13 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.0</version>
+
             </plugin>
         </plugins>
     </build>
