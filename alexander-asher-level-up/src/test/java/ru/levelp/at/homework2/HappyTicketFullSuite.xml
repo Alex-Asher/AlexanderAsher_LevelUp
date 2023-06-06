@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Happy Ticket Full Suite">
+
+    <test name="Happy Ticket All Tests">
+        <classes>
+            <class name="ru.levelp.at.homework2.HappyTicketPositiveTest"/>
+            <class name="ru.levelp.at.homework2.HappyTicketNegativeTest"/>
+        </classes>
+    </test>
+
+</suite>

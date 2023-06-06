@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Happy Ticket Positive Suite">
+
+    <test name="Happy Ticket Positive Tests">
+        <classes>
+            <class name="ru.levelp.at.homework2.HappyTicketPositiveTest"/>
+        </classes>
+    </test>
+
+</suite>
