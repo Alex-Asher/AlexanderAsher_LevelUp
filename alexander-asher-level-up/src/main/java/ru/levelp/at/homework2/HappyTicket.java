@@ -9,7 +9,7 @@ public class HappyTicket {
             throw new IllegalArgumentException("Ticket number can't be empty!");
         }
 
-        if (ticketNumber.length() > 6) {
+        if (ticketNumber.length() != 6) {
             throw new IllegalArgumentException("Ticket number must contain six digits!");
         }
 
